@@ -23,14 +23,25 @@ app.post('/participants', async (req, res) =>{
     const messageObj = {from: req.body.name, to: 'Todos', text: 'entra na sala...', type: 'status', time: now.format("HH:mm:ss")}
     const userObj = {name: req.body.name, lastStatus:Date.now()}
     try{
-        const user = users.insertOne(userObj)
+        const user = await users.insertOne(userObj)
         const message = messages.insertOne(messageObj)
         res.send(userObj)
     }catch (error) {
         console.log(error)
     }
-
 })
+
+app.get('/participants', async (req, res) => {
+    try{
+        const usersObj = await users.find().toArray()
+        const usersArr = usersObj.map((u)=>u.name)
+        res.send(usersArr)
+    }catch (error) {
+        console.log(error)
+    }
+})
+
+
 
 
 app.listen(5000, ()=>{
