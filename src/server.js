@@ -41,6 +41,14 @@ app.get('/participants', async (req, res) => {
     }
 })
 
+app.post('/messages', async (req,res) => {
+    try{
+
+    }catch (error) {
+        console.log(error)
+    }
+})
+
 
 
 
