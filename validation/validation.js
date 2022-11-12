@@ -1,8 +1,6 @@
-import { participantsSchema } from "../schemas/participants.js";
+export function validation (participant, response, schema) {
 
-export function validateParticipant (participant, response) {
-
-    const validation = participantsSchema.validate(participant, {abortEarly: false})
+    const validation = schema.validate(participant, {abortEarly: false})
 
     if (validation.error) {
         const errors = validation.error.details.map((detail) => detail.message);
