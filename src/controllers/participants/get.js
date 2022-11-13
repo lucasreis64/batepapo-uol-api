@@ -1,12 +1,11 @@
-import { users } from "../../src/validation/data/mongoDB.js";
+import { users } from "../../../src/data/mongoDB.js";
 
 
 export async function getParticipants(req, res) {
     try {
         const usersObj = await users.find().toArray();
-        const usersArr = usersObj.map((u) => u.name);
-
-        res.send(usersArr);
+        
+        res.send(usersObj);
     } catch (error) {
         console.log(error);
         res.status(500).send(error);

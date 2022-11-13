@@ -1,8 +1,8 @@
 import express, {json} from 'express'
 import cors from 'cors'
-import participantsRouter from './routes/participants.js'
-import messagesRouter from './routes/messages.js'
-import statusRouter from './routes/status.js'
+import participantsRouter from './src/routes/participants.js'
+import messagesRouter from './src/routes/messages.js'
+import statusRouter from './src/routes/status.js'
 import { removeInactive } from './src/functions/removeInactive.js'
 
 const app = express()
