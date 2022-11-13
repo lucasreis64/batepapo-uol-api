@@ -22,7 +22,10 @@ export async function postParticipant(req, res) {
 
     if (!validation(req.body, res, participantsSchema)) return;
 
-    if (existentUser(name, res, isSameName)) return;
+    if (isSameName) {
+        res.status(422).send(`username "${name}" is already in use`);
+        return
+    }
 
     const messageObj = {
         from: name,

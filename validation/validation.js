@@ -1,6 +1,6 @@
-export function validation (participant, response, schema) {
+export function validation (object, response, schema) {
 
-    const validation = schema.validate(participant, {abortEarly: false})
+    const validation = schema.validate(object, {abortEarly: false})
 
     if (validation.error) {
         const errors = validation.error.details.map((detail) => detail.message);
