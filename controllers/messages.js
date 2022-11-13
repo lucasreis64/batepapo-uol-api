@@ -5,10 +5,11 @@ import dayjs from "dayjs";
 
 export async function getMessages(req, res) {
     const limit = Number(req.query.limit);
+
     const user = req.headers.user;
     let messageArr = await messages.find().toArray();
 
-    if (!user) {
+    if (!user || isNaN(limit)) {
         res.sendStatus(422);
         return;
     }
