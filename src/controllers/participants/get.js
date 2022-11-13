@@ -1,4 +1,4 @@
-import { users } from "../../data/mongoDB.js";
+import { users } from "../../src/validation/data/mongoDB.js";
 
 
 export async function getParticipants(req, res) {

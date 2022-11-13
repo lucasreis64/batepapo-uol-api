@@ -1,5 +1,5 @@
-import { messages } from "../../data/mongoDB.js";
-import filterMessages from "./aux/filterMessages.js";
+import { messages } from "../../src/validation/data/mongoDB.js";
+import filterMessages from "./functions/filterMessages.js";
 
 
 export async function getMessages(req, res) {

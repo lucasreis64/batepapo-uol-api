@@ -1,7 +1,7 @@
-import { validation } from "../../validation/validation.js";
+import { validation } from "../../src/validation/validation.js";
 import dayjs from "dayjs";
-import { participantsSchema } from "../../schemas/participants.js";
-import { users, messages } from "../../data/mongoDB.js";
+import { participantsSchema } from "../../src/validation/schemas/participants.js";
+import { users, messages } from "../../src/validation/data/mongoDB.js";
 
 export async function postParticipant(req, res) {
     let now = dayjs();

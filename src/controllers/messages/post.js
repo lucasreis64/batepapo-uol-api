@@ -1,6 +1,6 @@
-import { messages, users } from "../../data/mongoDB.js";
-import { validation } from "../../validation/validation.js";
-import { messagesSchema } from "../../schemas/messages.js";
+import { messages, users } from "../../src/validation/data/mongoDB.js";
+import { validation } from "../../src/validation/validation.js";
+import { messagesSchema } from "../../src/validation/schemas/messages.js";
 import dayjs from "dayjs";
 
 export async function postMessage(req, res) {
