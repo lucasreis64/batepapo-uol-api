@@ -1,6 +1,7 @@
 import express from 'express'
 
-import { getMessages, postMessage } from '../controllers/messages.js'
+import { getMessages } from '../controllers/messages/get.js'
+import { postMessage } from '../controllers/messages/post.js'
 
 const messagesRouter = express.Router()
 

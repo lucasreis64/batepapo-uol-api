@@ -1,4 +1,4 @@
-import { users } from "../data/mongoDB.js";
+import { users } from "../../data/mongoDB.js";
 
 export async function postStatus (req, res) {
     const user = req.headers.user

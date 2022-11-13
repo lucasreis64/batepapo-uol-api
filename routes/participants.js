@@ -1,6 +1,7 @@
 import express from "express";
 
-import { getParticipants, postParticipant } from "../controllers/participants.js";
+import { getParticipants } from "../controllers/participants/get.js";
+import { postParticipant } from "../controllers/participants/post.js";
 
 const participantsRouter = express.Router();
 

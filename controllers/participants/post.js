@@ -1,19 +1,7 @@
-import { users, messages } from "../data/mongoDB.js";
-import { validation } from "../validation/validation.js";
+import { validation } from "../../validation/validation.js";
 import dayjs from "dayjs";
-import { participantsSchema } from "../schemas/participants.js";
-
-export async function getParticipants(req, res) {
-    try {
-        const usersObj = await users.find().toArray();
-        const usersArr = usersObj.map((u) => u.name);
-
-        res.send(usersArr);
-    } catch (error) {
-        console.log(error);
-        res.status(500).send(error);
-    }
-}
+import { participantsSchema } from "../../schemas/participants.js";
+import { users, messages } from "../../data/mongoDB.js";
 
 export async function postParticipant(req, res) {
     let now = dayjs();
