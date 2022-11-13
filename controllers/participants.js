@@ -46,12 +46,3 @@ export async function postParticipant(req, res) {
         res.status(500).send(error);
     }
 }
-
-function existentUser(user, response, same) {
-    if (same) {
-        response.status(422).send(`username "${user}" is already in use`);
-        return true;
-    }
-
-    return false;
-}
