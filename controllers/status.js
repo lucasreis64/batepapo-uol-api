@@ -15,7 +15,7 @@ export async function postStatus (req, res) {
         
         await users.updateOne({_id: id}, {$set: {lastStatus: Date.now()}})
         res.status(500).send(isExistent)
-    } catch{
+    } catch (error) {
         console.error(error)
         res.status(500).send(error)
     }
