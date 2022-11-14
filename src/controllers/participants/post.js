@@ -2,6 +2,7 @@ import { validation } from "../../validation/validation.js";
 import dayjs from "dayjs";
 import { participantsSchema } from "../../../src/schemas/participants.js";
 import { users, messages } from "../../../src/data/mongoDB.js";
+import { sanitization } from "../../sanitization/sanitization.js";
 
 export async function postParticipant(req, res) {
     let now = dayjs();
@@ -26,7 +27,7 @@ export async function postParticipant(req, res) {
         };
         const userObj = { name: name, lastStatus: Date.now() };
 
-    
+        sanitization(userObj, true)
         await users.insertOne(userObj);
         await messages.insertOne(messageObj);
 

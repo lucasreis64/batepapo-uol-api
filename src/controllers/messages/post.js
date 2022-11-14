@@ -2,6 +2,7 @@ import { messages, users } from "../../../src/data/mongoDB.js";
 import { validation } from "../../validation/validation.js";
 import { messagesSchema } from "../../../src/schemas/messages.js";
 import dayjs from "dayjs";
+import { sanitization } from "../../sanitization/sanitization.js";
 
 export async function postMessage(req, res) {
     const from = req.headers.user;
@@ -30,6 +31,8 @@ export async function postMessage(req, res) {
             type: type,
             time: now.format("HH:mm:ss"),
         };
+
+        sanitization(message, false)
 
         await messages.insertOne(message);
 
