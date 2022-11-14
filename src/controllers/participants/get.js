@@ -7,7 +7,7 @@ export async function getParticipants(req, res) {
         
         res.send(usersObj);
     } catch (error) {
-        console.log(error);
+        console.error(error);
         res.status(500).send(error);
     }
 }

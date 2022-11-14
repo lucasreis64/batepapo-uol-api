@@ -1,5 +1,5 @@
 import { messages, users } from "../../../src/data/mongoDB.js";
-import { validation } from "../../../src/validation/validation.js";
+import { validation } from "../../validation/validation.js";
 import { messagesSchema } from "../../../src/schemas/messages.js";
 import dayjs from "dayjs";
 

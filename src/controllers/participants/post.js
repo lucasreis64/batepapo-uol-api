@@ -1,4 +1,4 @@
-import { validation } from "../../../src/validation/validation.js";
+import { validation } from "../../validation/validation.js";
 import dayjs from "dayjs";
 import { participantsSchema } from "../../../src/schemas/participants.js";
 import { users, messages } from "../../../src/data/mongoDB.js";
@@ -32,7 +32,7 @@ export async function postParticipant(req, res) {
 
         res.status(201).send(userObj);
     } catch (error) {
-        console.log(error);
+        console.error(error);
         res.status(500).send(error);
     }
 }
