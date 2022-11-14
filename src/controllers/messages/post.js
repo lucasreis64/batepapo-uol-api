@@ -32,7 +32,7 @@ export async function postMessage(req, res) {
             time: now.format("HH:mm:ss"),
         };
 
-        sanitization(message, false)
+        sanitization(message, false);
 
         await messages.insertOne(message);
 

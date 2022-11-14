@@ -6,7 +6,7 @@ export function sanitization(object, boolean) {
         let { name } = object;
 
         name = stripHtml(name).result.trim();
-        return
+        return;
     }
     //message
     let { type, from, to, text } = object;
@@ -16,5 +16,3 @@ export function sanitization(object, boolean) {
     to = stripHtml(to).result.trim();
     text = stripHtml(text).result.trim();
 }
-
-

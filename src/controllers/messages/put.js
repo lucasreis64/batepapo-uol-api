@@ -18,7 +18,7 @@ export async function messagePut(req, res) {
         const isExistent = await users.findOne({ name: user });
 
         if (!isExistent) {
-            res.status(422).send('user not found');
+            res.status(422).send("user not found");
             return;
         }
 

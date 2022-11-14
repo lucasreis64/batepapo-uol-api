@@ -15,7 +15,7 @@ export async function postParticipant(req, res) {
 
         if (isSameName) {
             res.status(422).send(`username "${name}" is already in use`);
-            return
+            return;
         }
 
         const messageObj = {
@@ -27,7 +27,7 @@ export async function postParticipant(req, res) {
         };
         const userObj = { name: name, lastStatus: Date.now() };
 
-        sanitization(userObj, true)
+        sanitization(userObj, true);
         await users.insertOne(userObj);
         await messages.insertOne(messageObj);
 

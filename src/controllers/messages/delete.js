@@ -12,7 +12,7 @@ export async function deleteMessage(req, res) {
 
     try {
         const message = await messages.findOne({ _id: ObjectId(id) });
-        console.log(message)
+        console.log(message);
         if (!message) {
             res.sendStatus(404);
             return;
@@ -23,8 +23,8 @@ export async function deleteMessage(req, res) {
             return;
         }
 
-        await messages.deleteOne({_id: ObjectId(id)})
-        res.sendStatus(200)
+        await messages.deleteOne({ _id: ObjectId(id) });
+        res.sendStatus(200);
     } catch (error) {
         console.error(error);
         res.status(500).send(error);
