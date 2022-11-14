@@ -12,7 +12,7 @@ export async function deleteMessage(req, res) {
 
     try {
         const message = await messages.findOne({ _id: ObjectId(id) });
-        console.log(message);
+
         if (!message) {
             res.sendStatus(404);
             return;
